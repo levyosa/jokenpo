@@ -1,58 +1,73 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, Button, TouchableOpacity } from 'react-native';
+type Props = {};
+class Regra extends React.Component {
+	constructor (props){
+		super(props);
+		this.state = {
+			imagem: 0,
+		}
+	}
 
-const Regra = () => {
 
-	return (
-		<View style={styles.main}> 
-          
+	mudaImagem(){
+		if(this.state.imagem==0){
+			this.setState({
+				imagem:1,
+			});
+		
+		}else{
+			
+			this.setState({
+				imagem:0,
+			});
+		}
+		
+	}
 
-	         <View style={styles.container}>
-
-			         <TouchableOpacity onPress={() => alert("REGRA")}>
+	render(){
+		if (this.state.imagem==0) {
+			return(
+				<View style={styles.main}> 
+		             <TouchableOpacity onPress={() => this.mudaImagem()}>
+				         <Image source={require('../img/regra_p.png')}
+				         style={styles.imagem}/>
+			         </TouchableOpacity>
+		         
+	        </View>	
+			);	
+		}else{
+			return (
+				<View style={styles.main}> 
+		            <TouchableOpacity onPress={() => this.mudaImagem()}>
 				         <Image source={require('../img/regra.png')}
 				         style={styles.imagem}/>
 			         </TouchableOpacity>
-
-	         </View>
-        </View>		
-    );
+			         
+		       	</View>		
+    		);
+		}
+	}
 } 
 
-// const MudaImagem = () => {
-// 			int flag = 0;
-// 			if(flag==0){
-// 				flag=1;
-// 				return	'../img/regra.png');
-// 			}
-// 			else if(flag==1){
-// 				flag = 0;
-// 				return	'../img/regra_p.png';
-				
-// 			} 
-// }
+
 
 const styles = StyleSheet.create({
 
 	main: {
-		
+	  	
+	  	height:250,
+	 	width:400,
+		backgroundColor:'green',
+	 	margin:10,
 
-		flexDirection: 'column',
 	},
 	 imagem:{ 
+	 	height:250,
 	 	width:400,
-	  	height:350
+	 	resizeMode:'stretch',
 	},
-	 container:{  
-	 	flexDirection: 'column',
-	 	borderRadius: 4,
-	 	   borderWidth: 4,
-	 	   borderColor: 'black',
-	 	   
-	 	
-
-	 },
-
+	 
 
 });
 

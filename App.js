@@ -10,20 +10,24 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Header from './src/components/Header';
 import Regra from './src/components/Regra';
+import Cabeca from './src/components/Cabeca';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 type Props = {};
 export default class App extends Component<Props> {
+  
   render() {
     return (
       <View style={styles.container}>
         <Header />
+        <Regra />
+        <View style={styles.cabecalho}>
+          <Cabeca vs={0}/>
+          <Cabeca vs={1}/>
+          <Cabeca vs={2}/>
+          <Cabeca vs={3}/>
+          <Cabeca vs={4}/>
+        </View>
         <Regra />
       </View>
     );
@@ -33,9 +37,13 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#5A00A2',
+
   },
+  cabecalho:{
+    flexDirection: 'row',
+  }
   
 });  

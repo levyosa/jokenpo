@@ -28,7 +28,7 @@ const Header = () => {
 const styles = StyleSheet.create({
 
 	main: {
-		
+		alignSelf:'flex-start',
 		backgroundColor: 'grey',
 		flexDirection: 'row',
 	},
