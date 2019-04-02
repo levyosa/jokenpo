@@ -7,35 +7,51 @@ const Header = () => {
 		<View style={styles.main}> 
           
 
-	         <View style={{flex:1,flexDirection: 'row'}}>
-			         <TouchableOpacity 
-			         	onPress={() => alert("GAME")}>
-				         <Text style={styles.text} >GAME</Text>
+	         <View style={styles.barra}>
+
+			         <TouchableOpacity onPress={() => alert("GAME")}>
+				         <Text style={styles.game} >GAME</Text>
 			         </TouchableOpacity>
 
-			         <TouchableOpacity 
-			         	onPress={() => alert("reset")}>
+			         <TouchableOpacity onPress={() => alert("reset")}>
 				         <Image source={require('../img/reset.png')}
-				         style={{ width:40, height:40}}/>
+				         style={styles.reset}/>
 			         </TouchableOpacity>
+
 	         </View>
         </View>		
     );
 }
 
+
+
 const styles = StyleSheet.create({
 
 	main: {
 		
-		backgroundColor: 'lime',
+		backgroundColor: 'grey',
 		flexDirection: 'row',
 	},
 
-	 text: {
+	 game: {
 	 	flex:1,
 	 	fontSize:25,
 	    color:'white',
+	    fontWeight: 'bold',
 	 },
+	 reset:{ 
+	 	width:40,
+	  	height:40
+	},
+	 barra:{
+	 	flex:1,
+	 	flexDirection: 'row',
+	 	justifyContent: 'space-between',
+	 	paddingLeft:5,
+	 	paddingRight:5,
+
+	 },
+
 
 });
 

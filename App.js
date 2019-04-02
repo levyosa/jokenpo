@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Header from './src/components/Header';
+import Regra from './src/components/Regra';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,6 +24,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Header />
+        <Regra />
       </View>
     );
   }
@@ -36,4 +38,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#5A00A2',
   },
   
-});
+});  
