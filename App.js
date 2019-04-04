@@ -11,6 +11,8 @@ import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Header from './src/components/Header';
 import Regra from './src/components/Regra';
 import Cabeca from './src/components/Cabeca';
+import CampoBatalha from './src/components/CampoBatalha';
+
 
 
 type Props = {};
@@ -22,13 +24,13 @@ export default class App extends Component<Props> {
         <Header />
         <Regra />
         <View style={styles.cabecalho}>
-          <Cabeca vs={0}/>
+          <Cabeca vs={0} />
           <Cabeca vs={1}/>
           <Cabeca vs={2}/>
           <Cabeca vs={3}/>
           <Cabeca vs={4}/>
         </View>
-        <Regra />
+        <CampoBatalha />
       </View>
     );
   }
