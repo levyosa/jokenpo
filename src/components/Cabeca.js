@@ -13,7 +13,7 @@ class Cabeca extends React.Component {
 		if(this.props.vs==0){
 			return (
 				<View style={styles.main}> 
-		            <TouchableOpacity onPress={() => alert("Zeroo")}>
+		            <TouchableOpacity onPress={() => this.props.onPress(0)}>
 				         <Image source={require('../img/pedra_vs.png')}
 				         style={styles.imagem}/>
 			         </TouchableOpacity>
@@ -23,7 +23,7 @@ class Cabeca extends React.Component {
 		}else if(this.props.vs==1){
 			return (
 				<View style={styles.main}> 
-		            <TouchableOpacity onPress={() => alert(this.props.vs)}>
+		            <TouchableOpacity onPress={() => this.props.onPress(1)}>
 				         <Image source={require('../img/spock_vs.png')}
 				         style={styles.imagem}/>
 			         </TouchableOpacity>
@@ -33,7 +33,7 @@ class Cabeca extends React.Component {
 		}else if(this.props.vs==2){
 			return (
 				<View style={styles.main}> 
-		            <TouchableOpacity onPress={() => alert(this.props.vs)}>
+		            <TouchableOpacity onPress={() => this.props.onPress(2)}>
 				         <Image source={require('../img/tesoura_vs.png')}
 				         style={styles.imagem}/>
 			         </TouchableOpacity>
@@ -43,8 +43,18 @@ class Cabeca extends React.Component {
 		}else if(this.props.vs==3){
 			return (
 				<View style={styles.main}> 
-		            <TouchableOpacity onPress={() => alert(this.props.vs)}>
+		            <TouchableOpacity onPress={() => this.props.onPress(3)}>
 				         <Image source={require('../img/lagarto_vs.png')}
+				         style={styles.imagem}/>
+			         </TouchableOpacity>
+			         
+		       	</View>		
+    		);
+		}else if(this.props.vs==4){
+			return (
+				<View style={styles.main}> 
+		            <TouchableOpacity onPress={() => this.props.onPress(4)}>
+				         <Image source={require('../img/papel_vs.png')}
 				         style={styles.imagem}/>
 			         </TouchableOpacity>
 			         
@@ -53,8 +63,8 @@ class Cabeca extends React.Component {
 		}
 		return (
 			<View style={styles.main}> 
-	            <TouchableOpacity onPress={() => alert(this.props.vs)}>
-			         <Image source={require('../img/papel_vs.png')}
+	            <TouchableOpacity onPress={() => this.props.onPress(5)}>
+			         <Image source={require('../img/reset.png')}
 			         style={styles.imagem}/>
 		         </TouchableOpacity>
 		         

@@ -7,25 +7,10 @@ class CampoBatalha extends React.Component {
 	constructor (props){
 		super(props);
 		this.state = {
-			imagem: 0,
-		}
-	}
-
-
-	mudaImagem(){
-		if(this.state.imagem==0){
-			this.setState({
-				imagem:1,
-			});
-		
-		}else{
 			
-			this.setState({
-				imagem:0,
-			});
 		}
-		
 	}
+
 
 	render(){
 		
@@ -37,12 +22,13 @@ class CampoBatalha extends React.Component {
 			     	</View>
 
 			     	<View style={styles.versus}>
-			     		<Retrato />
+			     		<Retrato vs = {this.props.champ}/>
 			     		<Image source={require('../img/versus.png')} style={styles.versusImg}/>
-			     		<Retrato />
+			     		<Retrato vs = {this.props.bot}/>
 			     	</View>
-			     	<Text>a</Text>
-
+			     	<View>
+			     	<Text>{this.state.champ}</Text>
+			     	</View>
 				    
 			        	
 			        

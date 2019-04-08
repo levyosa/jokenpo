@@ -5,9 +5,11 @@ class Retrato extends React.Component {
 	constructor (props){
 		super(props);
 		this.state = {
+			vs: this.props.vs,
 		
 		}
 	}
+	
 
 	render(){
 		if(this.props.vs==0){
