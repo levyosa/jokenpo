@@ -55,7 +55,7 @@ class Retrato extends React.Component {
 	}
 	return(
 	<View>
-		<Image source={require('../img/reset.png')}
+		<Image source={require('../img/5.png')}
 			         style={styles.imagem}/>
 	</View>
 		);
@@ -73,7 +73,10 @@ const styles = StyleSheet.create({
 	 imagem:{ 
 	 	height:80,
 	 	width:80,
-	 	resizeMode:'cover'
+	 	resizeMode:'cover',
+	 	 borderRadius: 100,
+    	borderWidth: 3,
+    	borderColor: 'black',
 	},
 	 
 

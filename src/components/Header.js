@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, Button, TouchableOpacity } from 'react-native';
 
-const Header = () => {
+const Header = (props) => {
 
 	return (
 		<View style={styles.main}> 
@@ -9,11 +9,11 @@ const Header = () => {
 
 	         <View style={styles.barra}>
 
-			         <TouchableOpacity onPress={() => alert("GAME")}>
+			         
 				         <Text style={styles.game} >GAME</Text>
-			         </TouchableOpacity>
+			         
 
-			         <TouchableOpacity onPress={() => alert("reset")}>
+			         <TouchableOpacity onPress={() => props.onPressReset()}>
 				         <Image source={require('../img/reset.png')}
 				         style={styles.reset}/>
 			         </TouchableOpacity>

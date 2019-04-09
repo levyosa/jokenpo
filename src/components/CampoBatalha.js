@@ -22,12 +22,21 @@ class CampoBatalha extends React.Component {
 			     	</View>
 
 			     	<View style={styles.versus}>
+
 			     		<Retrato vs = {this.props.champ}/>
 			     		<Image source={require('../img/versus.png')} style={styles.versusImg}/>
 			     		<Retrato vs = {this.props.bot}/>
 			     	</View>
-			     	<View>
-			     	<Text>{this.state.champ}</Text>
+
+			     	<View style={styles.placar}>
+
+				     	<View style = {styles.score} >
+					     	<Text style={{fontSize:30,color:'black'}}  >{this.props.champScore}</Text>
+				     	</View>
+				     	<View style = {styles.score} >
+					     	<Text style={{fontSize:30,color:'black'}} >{this.props.botScore}</Text>
+				     	</View>
+        			
 			     	</View>
 				    
 			        	
@@ -57,17 +66,31 @@ const styles = StyleSheet.create({
 		flex:1,
 		flexDirection:'row',
 		justifyContent:'center',
-		backgroundColor:'blue'
+		backgroundColor:'white',
+		maxHeight:100
 
 	},
 
 	placar:{
+		flex:1,
+		flexDirection:'row',
+		justifyContent:'space-around',
+		backgroundColor:'white',
+
 
 	},
 	versusImg:{
 		flex:1,
 		maxHeight:70,
 	 	maxWidth:100,
+
+	},
+	score:{
+		backgroundColor:'purple',
+		height:40,
+		width:100,
+		borderRadius:100,
+		alignItems:'center'
 
 	}
 	 

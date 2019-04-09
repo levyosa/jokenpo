@@ -23,6 +23,8 @@ export default class App extends Component<Props> {
     this.state = {
       champ:5,
       bot:5,
+      champScore:0,
+      botScore:0
     }
 
   }
@@ -43,23 +45,66 @@ export default class App extends Component<Props> {
   }
 
   vitoria(){
-    if(this.state.champ==0){
-        alert("pedra");
+
+        if(this.state.champ == 0 && this.state.bot != 0){
+          if(this.state.bot == 2||this.state.bot ==3 ){
+            this.state.champScore++;
+          }else{
+            this.state.botScore++;
+          }
+        } 
+
+        else if(this.state.champ == 1 && this.state.bot != 1){
+          if(this.state.bot == 2||this.state.bot == 0 ){
+            this.state.champScore++;
+          }else{
+            this.state.botScore++;
+          }
+        }
+
+        else if(this.state.champ == 2 &&this.state.bot != 2){
+          if(this.state.bot == 3||this.state.bot == 4 ){
+            this.state.champScore++;
+          }else{
+            this.state.botScore++;
+          }
+        }
+
+        else if(this.state.champ == 3 && this.state.bot != 3){
+          if(this.state.bot == 4||this.state.bot == 1 ){
+            this.state.champScore++;
+          }else{
+            this.state.botScore++;
+          }
+        }
+
+        else if(this.state.champ == 4 && this.state.bot != 4){
+          if(this.state.bot == 0||this.state.bot == 1 ){
+            this.state.champScore++;
+          }else{
+            this.state.botScore++;
+          }
+        }
 
         
 
 
-    }
+    
     
   }
 
 
-  
+
+
+
   render() {
     
     return (
       <View style={styles.container}>
-        <Header />
+        <Header onPressReset={ () => {
+          this.setState({ champScore:0, botScore:0 });
+        }}
+        />
         <Regra />
         <View style={styles.cabecalho}>
           <Cabeca vs={0} onPress={() => this.escolheChamp(0)}/>
@@ -67,8 +112,11 @@ export default class App extends Component<Props> {
           <Cabeca vs={2} onPress={() => this.escolheChamp(2)}/>
           <Cabeca vs={3} onPress={() => this.escolheChamp(3)}/>
           <Cabeca vs={4} onPress={() => this.escolheChamp(4)}/>
+
         </View>
-        <CampoBatalha champ = {this.state.champ} bot = {this.state.bot} />
+        
+        <CampoBatalha champ = {this.state.champ} bot = {this.state.bot} champScore={this.state.champScore} botScore={this.state.botScore}/>
+
       </View>
     );
   }
